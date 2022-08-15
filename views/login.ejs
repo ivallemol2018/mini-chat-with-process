@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>  
+</head>
+<body>
+  
+  <div class='bg-white h-screen w-screen flex flex-col justify-center items-center'>
+    <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl w-50 max-w-md">
+        <div class="flex flex-col items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            <h2 class="text-2xl font-bold">Login</h2>
+        </div>    
+        <div class="mt-2">
+          <form action="/login" method="POST">
+            <!-- username -->
+            <div class="flex flex-col my-2">
+                <label  for="username" class="mb-1 text-xs tracking-wide text-gray-600">Username</label>
+                <div class="relative">
+                    <div
+                      class="
+                        inline-flex
+                        items-center
+                        justify-center
+                        absolute
+                        left-0
+                        top-0
+                        h-full
+                        w-10
+                        text-gray-400
+                      "
+                    >
+                      <i class="fas fa-at text-blue-500"></i>
+                    </div>                     
+                    <input 
+                    id="username"
+                    class="text-sm
+                           placeholder-gray-500
+                           pl-10
+                           pr-4
+                           rounded-2xl
+                           border border-gray-400
+                           w-full
+                           py-2
+                           focus:outline-none focus:border-blue-400"
+                    name="username"
+                    required
+                    type="email"
+                    placeholder="Enter your email"/>
+                </div>
+
+            </div>
+            <div class="flex flex-col mb-6">
+                <label for="password" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Password</label>
+                <div class="relative">
+                    <div class="
+                        inline-flex
+                        items-center
+                        justify-center
+                        absolute
+                        left-0
+                        top-0
+                        h-full
+                        w-10
+                        text-gray-400
+                    ">
+                        <span>
+                        <i class="fas fa-lock text-blue-500"></i>
+                        </span>
+                    </div>                     
+                    <input 
+                    class="
+                        text-sm
+                        placeholder-gray-500
+                        pl-10
+                        pr-4
+                        rounded-2xl
+                        border border-gray-400
+                        w-full
+                        py-2
+                        focus:outline-none focus:border-blue-400"                    
+                    name="password"
+                    required
+                    type="password"
+                    placeholder="Enter your password"
+                    />
+                </div>
+            </div>
+            <div class="mt-4 text-xl sm:text-sm text-red-500">
+              <%= (login_errors.length > 0) ? login_errors[login_errors.length -1] : '' %>
+            </div>                        
+            <div class="flex w-full" >
+                <button 
+                    class="
+                        flex
+                        mt-2
+                        items-center
+                        justify-center
+                        focus:outline-none
+                        text-white text-sm
+                        sm:text-base
+                        bg-blue-500
+                        hover:bg-blue-600
+                        rounded-2xl
+                        py-2
+                        w-full
+                        transition
+                        duration-150
+                        ease-in"
+                    type="submit">
+                    <span class="mr-2 uppercase">Login</span>
+                    <span>
+                        <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </span>                    
+                </button>               
+            </div>
+          </form>
+        </div>
+    </div>
+    <div class="flex justify-center items-center mt-6">
+        <a
+          href="#"
+          target="_blank"
+          class="
+            inline-flex
+            items-center
+            text-gray-700
+            font-medium
+            text-xs text-center
+          "
+        >
+          <span class="ml-2"
+            >Not registered yet?
+            <a
+              href="/signup"
+              class="text-xs ml-2 text-blue-500 font-semibold inline-flex">
+                <span>Register now </span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </span>                
+            </a>
+        </span>
+        </a>
+    </div>    
+</div>
+
+
+</body>
+</html>

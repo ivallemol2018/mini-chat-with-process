@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+  <script>
+    setTimeout(redirectLogin,2000);
+    function redirectLogin(){
+      window.location.href = '/'
+    }
+  </script>
+<div class='flex items-center justify-center min-h-screen  via-teal-300 to-teal-500 bg-gradient-to-br'>
+  <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
+      <div class='max-w-md mx-auto space-y-6'>
+        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Hasta luego <%= typeof username != 'undefined' ? username : '' %></span>
+      </div>
+    </div>
+  </div>      
+  
+</body>
+</html>
